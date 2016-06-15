@@ -4,7 +4,6 @@ var createFrameworkConfig = function(ret, conf, settings, opt){
  
     fis.util.map(ret.src, function(subpath, file){
         if(file.requires && file.requires.length){
-            console.log(file.requires)
             map.deps[file.id] = file.requires;
         }
     });

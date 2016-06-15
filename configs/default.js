@@ -7,11 +7,7 @@ module.exports = function(options){
 	var plugins = {
 		postpackager:require('../plugins/postpackager/index.js')
 	};
- 	fis.hook('commonjs',{
-        ignoreDependencies:[
-            'components/**'
-        ]
-    })
+ 	fis.hook('commonjs')
 	fis.match('::package', {
 	    postpackager: plugins.postpackager
 	})
