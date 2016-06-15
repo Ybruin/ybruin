@@ -5,10 +5,10 @@
   "main": "index.js",
   "preferGlobal": true,
   "bin": {
-    "ybruin": "bin/ybruin.js"
+    "ybruin": "bin/ybruin"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,8 @@
     "fis-optimizer-png-compressor": "^0.1.2",
     "fis3-hook-commonjs": "^0.1.19",
     "fis3-hook-relative": "^1.0.5",
-    "fis3-parser-node-sass": "^0.1.9"
+    "fis3-parser-node-sass": "^0.1.9",
+    "liftoff": "^2.1.0",
+    "minimist": "^1.2.0"
   }
 }
