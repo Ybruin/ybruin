@@ -12,18 +12,19 @@ module.exports = function(options){
 	    postpackager: plugins.postpackager
 	})
 	// 默认产出路径
-	fis.match('/(*)/(**)',{
-        release:'/'+name+'/'+terminal+'/$1/$2'
+	fis.match('/(**)',{
+        release:'/'+name+'/'+terminal+'/$1'
     })
     .match('/views/(**)',{
         isViews:true
     })
-    .match('/js/(**)', {
+    .match('/(js/**)', {
         isMod:true,
         moduleId:'$1',
         id:'$1'
     })
-    .match('/sass/(**.scss)',{
+    .match('/sass/(**).scss',{
+        id:'ccs/$1.css',
         parser: fis.plugin('node-sass'),
         rExt: '.css',
         release:'/'+name+'/'+terminal+'/css/$1'
@@ -32,7 +33,10 @@ module.exports = function(options){
         release:false
     })
     .match('/components/(**)',{
-        //release:false
+        isMod:true,
+        moduleId:'$1',
+        id:'$1',
+        release:false
     })
 
 	// 发布本地开发版本

@@ -1,10 +1,18 @@
 var createFrameworkConfig = function(ret, conf, settings, opt){
     var map = {};
     map.deps = {};
+    var filePath;
  
     fis.util.map(ret.src, function(subpath, file){
         if(file.requires && file.requires.length){
             map.deps[file.id] = file.requires;
+            file.requires.forEach(function(req){
+                filePath = req.split('/');
+                if(filePath[0] == 'components'){
+                    map.deps[req]= map.deps[req] || [];
+                    map.deps[req].push('components/'+filePath[1]+'/'+filePath[1]+'.css')
+                }
+            })
         }
     });
     //把配置文件序列化

@@ -28,7 +28,7 @@ cli.launch({
     fis = require(env.modulePath);
   }
 
+  fis.cli.run(argv, env);
   fis.require.paths.push(path.join(env.cwd, 'node_modules', name));
   fis.require.paths.push(path.join(path.dirname(__dirname)));
-  fis.cli.run(argv, env);
 });
