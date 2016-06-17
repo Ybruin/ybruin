@@ -1,11 +1,11 @@
 {
   "name": "ybruin",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Modular front-end integrated solution",
   "main": "index.js",
   "preferGlobal": true,
   "bin": {
-    "ybruin": "bin/ybruin"
+    "ybruin": "bin/ybruin.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -29,7 +29,6 @@
   "homepage": "https://github.com/Ybruin/ybruin#readme",
   "dependencies": {
     "fis3": "^3.3.29",
-    "fis3-hook-commonjs": "^0.1.1",
     "fis-optimizer-clean-css": "^0.0.12",
     "fis-optimizer-png-compressor": "^0.1.2",
     "fis3-hook-commonjs": "^0.1.19",
