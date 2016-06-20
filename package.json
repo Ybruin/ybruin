@@ -1,6 +1,6 @@
 {
   "name": "ybruin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Modular front-end integrated solution",
   "main": "index.js",
   "preferGlobal": true,
@@ -16,8 +16,6 @@
   },
   "keywords": [
     "ybruin",
-    "framework",
-    "fis",
     "fis3",
     "yyweb"
   ],
@@ -28,9 +26,12 @@
   },
   "homepage": "https://github.com/Ybruin/ybruin#readme",
   "dependencies": {
-    "fis3": "^3.3.29",
+    "commander": "^2.9.0",
     "fis-optimizer-clean-css": "^0.0.12",
     "fis-optimizer-png-compressor": "^0.1.2",
+    "fis-optimizer-uglify-js": "^0.2.1",
+    "fis-spriter-csssprites-group": "^0.3.16",
+    "fis3": "^3.3.29",
     "fis3-hook-commonjs": "^0.1.19",
     "fis3-hook-relative": "^1.0.5",
     "fis3-parser-node-sass": "^0.1.9",
