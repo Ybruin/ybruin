@@ -1,4 +1,5 @@
 var fis = module.exports = require('fis3');
+
 fis.cli.name = 'ybruin';
 fis.cli.info = require('./package.json');
 fis.require.prefixes.unshift('ybruin', 'fis3');
