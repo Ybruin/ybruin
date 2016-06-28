@@ -58,8 +58,8 @@ module.exports = function(options){
         id:'$1',
         release:false
     })
-    fis.config.set('settings.spriter.csssprites-group',spriteConf)
-
+    fis.config.set('settings.spriter.csssprites-group',spriteConf);
+    
 	// 发布本地开发版本
 	fis.media('dev')
     // 启动 fis3-hook-relative 插件
