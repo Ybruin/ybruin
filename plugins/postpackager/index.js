@@ -14,7 +14,6 @@ var createFrameworkConfig = function(ret, conf, settings, opt){
         if(file.requires && file.requires.length){
             map.deps[file.id] = map.deps[file.id] || [];
             map.deps[file.id] = map.deps[file.id].concat(file.requires);
-
             file.requires.forEach(function(req){
                 filePath = req.split('/');
                 if(filePath[0] == 'components'){
@@ -30,7 +29,7 @@ var createFrameworkConfig = function(ret, conf, settings, opt){
             })
         }
     });
-
+    
     //再次遍历文件，找到isViews标记的文件
      fis.util.map(ret.src, function(subpath, file){
         //有isViews标记，并且html类文件，才需要做替换
@@ -48,6 +47,7 @@ var createFrameworkConfig = function(ret, conf, settings, opt){
                 var jsPath = comp.getJSPATH();
                 var cssPath = comp.getCSSPATH();
                 var entryId = 'js/'+file.filename+'.js';
+                map.deps[entryId] = map.deps[entryId] || [];
                 if(fis.util.isFile(jsPath)){
                     add(map.deps[entryId],jsId);
                 }
@@ -68,7 +68,6 @@ var createFrameworkConfig = function(ret, conf, settings, opt){
             }
         });
         !isExist && arrs.push(newItem);
-    }
-
+    };
 };
 module.exports = createFrameworkConfig;
