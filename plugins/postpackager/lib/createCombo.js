@@ -4,6 +4,9 @@
 var path = require('path');
 var fs = require('fs');
 var projectConf = fis.config.get('projectConf');
+var compConfPath = path.resolve('components.json');
+var compConf = fs.readFileSync(compConfPath,'utf-8');
+var compConfJson = JSON.parse(compConf);
 var slice = Array.prototype.slice;
 var rStyle = /<!--([\s]*)STYLE_COMP_PLACEHOLDER([\s]*)-->/ig;
 var rScript = /<!--([\s]*)SCRIPT_COMP_PLACEHOLDER([\s]*)-->/ig;
@@ -161,13 +164,17 @@ Reactor.prototype = {
 
         function resourceCombo(resdeps) {
             var urlLength = 0;
+            var idsHash = {};
             var ids = [];
             var url = [];
 
             each(resdeps, function (res, i) {
                 if (urlLength + res.id.length < settings.maxUrlLength || true) {
                     urlLength += res.id.length;
-                    ids.push(res.id);
+                    if(!idsHash[res.id]){
+                        idsHash[res.id] = true;
+                        ids.push(res.id);
+                    }
                 } else {
                     ycombo.replaceComp(genUrl(ids));
                     urlLength = res.id.length;
@@ -252,7 +259,13 @@ function genUrl(ids,isComp) {
     var url = isComp === true ? settings.compDomain : settings.staticDomain;
 
     isComp&&each(ids,function (value,key){
-        ids[key] =  value.replace('components/','');
+        var compName = value.split('/')[1];
+        if(compConfJson[compName] != undefined){
+            ids[key] =  value.replace(/components\/(\S+)\/(.+)/,'$1/'+compConfJson[compName]+'/$2');
+        }else{
+            ids[key] =  value.replace(/components\/(\S+)\/(.+)/,'$1/$2');
+        }
+        
     })
 
     switch (type(url)) {

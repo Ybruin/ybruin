@@ -55,8 +55,7 @@ module.exports = function(options){
     .match('/(components/**)',{
         isMod:true,
         moduleId:'$1',
-        id:'$1',
-        release:false
+        id:'$1'
     })
     fis.config.set('settings.spriter.csssprites-group',spriteConf);
     
