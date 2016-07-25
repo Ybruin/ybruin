@@ -26,7 +26,7 @@ module.exports = function(options){
 	fis.match('/(**)',{
         release:'/'+name+'/'+terminal+'/$1'
     })
-    .match('/views/(**)',{
+    .match('/html/(**)',{
         isViews:true
     })
     .match('::image', {
