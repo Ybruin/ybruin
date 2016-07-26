@@ -1,6 +1,6 @@
 {
   "name": "ybruin",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Modular front-end integrated solution",
   "main": "index.js",
   "preferGlobal": true,
@@ -37,6 +37,8 @@
     "fis3-parser-node-sass": "^0.1.9",
     "liftoff": "^2.1.0",
     "minimist": "^1.2.0",
-    "ybruin-command-release": "^0.1.0"
+    "ybruin-command-release": "^0.1.0",
+    "ybruin-command-install": "^0.1.0",
+    "ybruin-command-init": "^0.1.0"
   }
 }
