@@ -13,11 +13,12 @@ module.exports = function(options){
     var compressJs = typeof projectConf.compressJs != false ? true : projectConf.compressJs;
     var useSprite = typeof projectConf.useSprite != false ? true : projectConf.useSprite;
     var useHash = typeof projectConf.useHash != false ? true : projectConf.useHash;
+    var useModule = projectConf.useModule || false;
 
 	var plugins = {
 		postpackager:require('../plugins/postpackager/index.js')
 	};
- 	fis.hook('commonjs')
+ 	useModule && fis.hook('commonjs')
 	fis.match('::package', {
 	    postpackager: plugins.postpackager,
         spriter: fis.plugin('csssprites-group')
@@ -38,6 +39,9 @@ module.exports = function(options){
     .match('**.{css,scss}',{
         useSprite:useSprite
     })
+    .match('**.js',{
+        parser: fis.plugin('react')
+    })
     .match('/(js/**)', {
         isMod:true,
         moduleId:'$1',
@@ -57,6 +61,7 @@ module.exports = function(options){
         moduleId:'$1',
         id:'$1'
     })
+
     fis.config.set('settings.spriter.csssprites-group',spriteConf);
     
 	// 发布本地开发版本

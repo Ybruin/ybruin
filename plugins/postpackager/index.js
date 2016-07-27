@@ -18,12 +18,15 @@ var createFrameworkConfig = function(ret, conf, settings, opt){
                 filePath = req.split('/');
                 if(filePath[0] == 'components'){
                     var comp = analyzeComp(filePath[1]);
+                    var jsPath = comp.getJSPATH();
                     var cssPath = comp.getCSSPATH();
                     var jsId = comp.getJSID();
                     var cssId = comp.getCSSID();
-                    if(fis.util.isFile(cssPath)){
-                        map.deps[jsId] = map.deps[jsId] || [];
-                        map.deps[jsId].push(cssId);
+                    if(fs.existsSync(cssPath)){
+                        if(fs.existsSync(jsPath)){
+                            map.deps[jsId] = map.deps[jsId] || [];
+                            map.deps[jsId].push(cssId);
+                        }
                     }
                 }
             })
