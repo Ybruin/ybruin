@@ -1,6 +1,6 @@
 {
   "name": "ybruin",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Modular front-end integrated solution",
   "main": "index.js",
   "preferGlobal": true,
@@ -34,7 +34,7 @@
     "fis3": "^3.3.29",
     "fis3-hook-commonjs": "^0.1.19",
     "fis3-hook-relative": "^1.0.5",
-    "fis3-parser-node-sass": "^0.1.9",
+    "fis-parser-node-sass": "^0.2.1",
     "liftoff": "^2.1.0",
     "minimist": "^1.2.0",
     "ybruin-command-release": "^0.1.0",
