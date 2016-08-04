@@ -1,6 +1,6 @@
 {
   "name": "ybruin",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Modular front-end integrated solution",
   "main": "index.js",
   "preferGlobal": true,
@@ -40,6 +40,8 @@
     "minimist": "^1.2.0",
     "ybruin-command-release": "^0.1.0",
     "ybruin-command-install": "^0.1.1",
-    "ybruin-command-init": "^0.1.2"
+    "ybruin-command-init": "^0.1.2",
+    "ybruin-command-component": "^0.1.0",
+    "ybruin-command-create": "^0.1.0"
   }
 }
