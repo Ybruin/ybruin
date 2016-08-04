@@ -45,3 +45,10 @@
 ------------------
 
 * 添加依赖fis-parser-react
+
+
+0.1.11 / 2016-08-04
+-------------------
+
+* 添加ybruin-command-component创建组件脚手架
+* 添加ybruin-command-create编译开发组件
