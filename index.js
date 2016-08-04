@@ -13,6 +13,7 @@ fis.config.set('project.ignore',['node_modules/**', 'output/**', '.git/**', 'ybr
 //mount scene
 fis.runConf = require('./configs/default.js');
 
+fis.runComponentConf = require('./configs/componentDefault.js');
 //alias
 Object.defineProperty(global, 'ybruin', {
   enumerable : true,
