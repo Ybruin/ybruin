@@ -52,3 +52,13 @@
 
 * 添加ybruin-command-component创建组件脚手架
 * 添加ybruin-command-create编译开发组件
+
+
+0.1.12 / 2016-08-04
+-------------------
+
+* 添加ybruin-postpackager-loader打包插件
+* ybruin-config.js配置文件增加可配置内容，配置方式与fis3一致
+* 文件产出路径和结构可配置化。
+
+
