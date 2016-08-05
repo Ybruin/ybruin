@@ -1,6 +1,6 @@
 {
   "name": "ybruin",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Modular front-end integrated solution",
   "main": "index.js",
   "preferGlobal": true,

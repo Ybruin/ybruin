@@ -10,7 +10,7 @@ ybruin.file = require('./lib/file.js');
 
 ybruin.config.set('project.ignore',['node_modules/**', 'output/**', '.git/**', 'ybruin-conf.js'])
 
-yrbuin.runComponentConf = require('./configs/componentDefault.js');
+ybruin.runComponentConf = require('./configs/componentDefault.js');
 //alias
 Object.defineProperty(global, 'ybruin', {
   enumerable : true,
